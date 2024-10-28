@@ -5,7 +5,7 @@
 
 #Aqui vai uma sugestão inicial da estrutura:
 
-# 1.Script de Criação de Tabelas: Definindo tabelas principais, como de funcionários, pagamentos, e departamentos.
+## 1.Script de Criação de Tabelas: Definindo tabelas principais, como de funcionários, pagamentos, e departamentos.
 # 2.Inserindo Dados fictícios de Forma Automática com Loop
 # 3.Criação de Views: Consolidando informações de pagamento e dados pessoais.
 # 4.Triggers: Automatizando cálculos, como retenção de impostos e auditoria de atualizações.
