@@ -1,0 +1,19 @@
+
+/*Módulo 4: Bulk Collect e ForAll
+Script 5: Processamento em Massa*/
+
+CREATE OR REPLACE PROCEDURE PAGAMENTO_EM_MASSA IS 
+	TYPE t_funcionarios IS TABLE OF FUNCIONARIOS.ID_FUNCIONARIO%TYPE;
+	v_funcionario t_funcionarios;
+BEGIN
+	SELECT ID_FUNCIONARIO BULK COLLECT INTO v_funcionario FROM FUNCIONARIOS f ;
+
+	FORALL i IN v_funcionario.FIRST .. v_funcionario.LAST
+		INSERT INTO SALARIOS s (ID_SALARIO, ID_FUNCIONARIO, VALOR_PAGO, DATA_PAGAMENTO)
+		VALUES(SEQ_SALARIOS.NEXTVAL, v_funcionario(i), 1000, SYSDATE);
+	
+	COMMIT;
+END;
+
+
+
